@@ -104,11 +104,12 @@ var Bracket = (function() {
         this.correct = 0;
         this.answered = 0;
         var promise = new $.Deferred();
+        console.log(this.data);
         dust.render('bracket', this, function(err, out) {
           self.element.html(out);
           self.element.find('.bracket_item').hide();
           self.element.find('.bracket_0 .bracket_item').show();
-          self.element.find('.bracket_8 .bracket_item').show();
+          self.element.find('.bracket_10 .bracket_item').show();
           promise.resolve();
         });
         return promise;
@@ -131,16 +132,25 @@ var Bracket = (function() {
         ];
 
         var first_round = sorting_loop(this.raw_data);
+        console.log(first_round);
         var second_round = sorting_loop(first_round.next);
+        console.log(second_round);
         var third_round = sorting_loop(second_round.next);
+        console.log(third_round);
         var fourth_round = sorting_loop(third_round.next);
-        var final_round = sorting_loop(fourth_round.next);
+        console.log(fourth_round);
+        var fifth_round = sorting_loop(fourth_round.next);
+        console.log(fifth_round);
+        var final_round = sorting_loop(fifth_round.next);
+        console.log(final_round);
 
         this.data.push({data: first_round.left});
         this.data.push({data: second_round.left});
         this.data.push({data: third_round.left});
         this.data.push({data: fourth_round.left});
+        this.data.push({data: fifth_round.left});
         this.data.push({data: final_round.left});
+        this.data.push({data: fifth_round.right});
         this.data.push({data: fourth_round.right});
         this.data.push({data: third_round.right});
         this.data.push({data: second_round.right});
@@ -154,20 +164,20 @@ var Bracket = (function() {
         this.element.find('.bracket_item').click(function(event) {
           var is_right = true;
           var clicked = $(event.target);
-          var correct_val = parseInt(clicked.attr('data-value'), 10);
+          var correct_val = parseFloat(clicked.attr('data-value'), 10);
           clicked.parent().find('li').each(function() {
             $(this).unbind('click');
-            if (parseInt($(this).attr('data-value')) > correct_val) {
+            if (parseFloat($(this).attr('data-value')) > correct_val) {
               is_right = false;
-              correct_val = parseInt($(this).attr('data-value'), 10);
+              correct_val = parseFloat($(this).attr('data-value'), 10);
             }
           });
           clicked.addClass(is_right ? 'right' : 'wrong');
           if (is_right) { self.correct++; }
 
           var bracket;
-          var this_bracket = parseInt(clicked.attr('data-bracket'), 10);
-          var final_bracket = parseInt(self.data.length, 10) / 2
+          var this_bracket = parseFloat(clicked.attr('data-bracket'), 10);
+          var final_bracket = parseFloat(self.data.length, 10) / 2
           if (this_bracket > final_bracket) { //is on the right
             bracket = this_bracket - 1; //move toward center
           } else if (this_bracket < final_bracket) { //is on the left
@@ -179,7 +189,7 @@ var Bracket = (function() {
             self.element.find('.bracket_' + bracket + 
               ' .pairing_' + pairing + ' li'
             ).each(function() {
-              if (parseInt($(this).attr('data-value'), 10) === correct_val) {
+              if (parseFloat($(this).attr('data-value'), 10) === correct_val) {
                 $(this).show();
               }
             })
