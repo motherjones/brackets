@@ -106,6 +106,7 @@ var Bracket = (function() {
       },
       reset: function() {
         var self = this;
+        this.element.find('.complete').remove();
         this.randomize_data_order();
         this.organize_data();
 
