@@ -24,10 +24,24 @@ var Bracket = (function() {
   </div>\
   <button type="button" class="reset">Try Again</button>\
   ';
+  var complete_template = '<div class="complete">\
+      <h4>You got {correct} answers correct!</h4>\
+      <h5>Now see how your friends do</h5>\
+      <a rel="nofollow" target="_blank" class=" sd-button share-icon" \
+        href="http://twitter.com/home?status={location} {text|u}" \
+        title="Click to share on Twitter"><span>Twitter</span></a>\
+      <a rel="nofollow" target="_blank" class="sd-button share-icon"\
+        href="https://www.facebook.com/dialog/feed?app_id=1132888650146012&display=popup&caption={text|u}&link={location}&redirect_uri={location}"\
+        title="Share on Facebook"><span>Facebook</span></a>\
+      <button type="button" class="reset">Try Again</button>\
+    </div>\
+  ';
   var compiled_pairing = dust.compile(pairing_template, 'bracket_pairing');
   dust.loadSource(compiled_pairing);
   var compiled_bracket = dust.compile(bracket_template, 'bracket');
   dust.loadSource(compiled_bracket);
+  var compiled_complete = dust.compile(complete_template, 'complete');
+  dust.loadSource(compiled_complete);
 
 
   var Constructor = function(spreadsheet_id, selector, proxy) {
@@ -104,7 +118,6 @@ var Bracket = (function() {
         this.correct = 0;
         this.answered = 0;
         var promise = new $.Deferred();
-        console.log(this.data);
         dust.render('bracket', this, function(err, out) {
           self.element.html(out);
           self.element.find('.bracket_item').hide();
@@ -132,17 +145,11 @@ var Bracket = (function() {
         ];
 
         var first_round = sorting_loop(this.raw_data);
-        console.log(first_round);
         var second_round = sorting_loop(first_round.next);
-        console.log(second_round);
         var third_round = sorting_loop(second_round.next);
-        console.log(third_round);
         var fourth_round = sorting_loop(third_round.next);
-        console.log(fourth_round);
         var fifth_round = sorting_loop(fourth_round.next);
-        console.log(fifth_round);
         var final_round = sorting_loop(fifth_round.next);
-        console.log(final_round);
 
         this.data.push({data: first_round.left});
         this.data.push({data: second_round.left});
@@ -202,7 +209,20 @@ var Bracket = (function() {
         });
       },
       finished: function() {
-        alert ( 'You got ' + this.correct + ' correct!');
+        var self = this;
+        dust.render('complete',
+          {
+            correct: this.correct,
+            location: document.location,
+            text: 'I guessed the best milage on ' + this.correct + ' out of 64 match ups of cars!',
+          },
+          function(err, out) {
+            self.element.append($(out));
+            self.element.find('.reset').click(function() {
+              self.reset();
+            });
+          }
+        );
       },
 
     };
