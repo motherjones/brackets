@@ -26,13 +26,15 @@ var Bracket = (function() {
   ';
   var complete_template = '<div class="complete">\
       <h4>You got {correct} answers correct!</h4>\
-      <h5>Now see how your friends do</h5>\
+      <h5>See how your friends do on \
       <a rel="nofollow" target="_blank" class=" sd-button share-icon" \
         href="http://twitter.com/home?status={location} {text|u}" \
         title="Click to share on Twitter"><span>Twitter</span></a>\
+        or \
       <a rel="nofollow" target="_blank" class="sd-button share-icon"\
         href="https://www.facebook.com/dialog/feed?app_id=1132888650146012&display=popup&caption={text|u}&link={location}&redirect_uri={location}"\
         title="Share on Facebook"><span>Facebook</span></a>\
+      </h5>\
       <button type="button" class="reset">Try Again</button>\
     </div>\
   ';
@@ -48,9 +50,7 @@ var Bracket = (function() {
     var bracket = new Bracket;
     bracket.spreadsheet_id = spreadsheet_id;
     bracket.element = jQuery(selector);
-    $.when(bracket.load()).done(function() {
-      bracket.reset();
-    });
+    bracket.load();
     return bracket;
   };
 
@@ -58,7 +58,6 @@ var Bracket = (function() {
     return {
       load: function() {
         var self = this;
-        var promise = new $.Deferred();
         var options = {
           key: this.spreadsheet_id,
           callback: function(data) {
@@ -69,39 +68,13 @@ var Bracket = (function() {
             }
             self.raw_data = data;
 
-            promise.resolve();
+            self.reset();
           },
         }
         if (this.proxy) {
           options.proxy = this.proxy;
         }
         Tabletop.init(options); 
-        
-        //REMOVE ME
-        /*
-        this.raw_data = [
-          { name: '1', value: 1, },
-          { name: '2', value: 2, },
-          { name: '3', value: 3, },
-          { name: '4', value: 4, },
-          { name: '5', value: 5, },
-          { name: '6', value: 6, },
-          { name: '7', value: 7, },
-          { name: '8', value: 8, },
-          { name: '9', value: 9, },
-          { name: '10', value: 10, },
-          { name: '11', value: 11, },
-          { name: '12', value: 12, },
-          { name: '13', value: 13, },
-          { name: '14', value: 14, },
-          { name: '15', value: 15, },
-          { name: '16', value: 16, },
-        ];
-        promise.resolve();
-        //END REMOVE ME
-        */
-
-        return promise;
 
       },
       reset: function() {
@@ -110,23 +83,19 @@ var Bracket = (function() {
         this.randomize_data_order();
         this.organize_data();
 
-        $.when(this.create()).done(function() {
-          self.bind();
-        });
+        this.create();
       },
       create: function() {
         var self = this;
         this.correct = 0;
         this.answered = 0;
-        var promise = new $.Deferred();
         dust.render('bracket', this, function(err, out) {
           self.element.html(out);
-          self.element.find('.bracket_item').hide();
-          self.element.find('.bracket_0 .bracket_item').show();
-          self.element.find('.bracket_10 .bracket_item').show();
-          promise.resolve();
+          self.element.find('.bracket_item').css('visibility', 'hidden');
+          self.element.find('.bracket_0 .bracket_item').css('visibility', 'visible');
+          self.element.find('.bracket_10 .bracket_item').css('visibility', 'visible');
+          self.bind();
         });
-        return promise;
       },
       randomize_data_order: function() {
         var current_index = this.raw_data.length
@@ -198,7 +167,7 @@ var Bracket = (function() {
               ' .pairing_' + pairing + ' li'
             ).each(function() {
               if (parseFloat($(this).attr('data-value'), 10) === correct_val) {
-                $(this).show();
+                $(this).css('visibility', 'visible');
               }
             })
 
