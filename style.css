@@ -24,11 +24,11 @@
 }
 
 .right {
-  background-color: green;
+  color: green;
 }
 
 .wrong {
-  background-color: red;
+  color: red;
 }
 
 .bracket_container ul {
