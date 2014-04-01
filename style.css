@@ -42,6 +42,7 @@
 	padding: 5px;
 	margin-bottom: 50px;
 	font-size: 12px;
+	height: 40px;
 }
 
 .bracket_container .bracket_pairing li:hover {
