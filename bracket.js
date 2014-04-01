@@ -65,12 +65,12 @@ var Bracket = (function() {
             self.raw_data = [];
             for (var i = 0; i < data.length; i++) {
               if (i > 15) {
-                continue;
+                break;
               }
               data[i].name = data[i].makemodel;
               data[i].value = parseFloat(data[i].comb08u, 10);
+              self.raw_data.push(data[i]);
             }
-            self.raw_data = data;
 
             self.reset();
           },
@@ -130,6 +130,7 @@ var Bracket = (function() {
         this.data.push({data: third_round.right});
         this.data.push({data: second_round.right});
         this.data.push({data: first_round.right});
+        console.log(this.data);
       },
       bind: function() {
         var self = this;
