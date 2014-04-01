@@ -62,7 +62,11 @@ var Bracket = (function() {
           key: this.spreadsheet_id,
           callback: function(data) {
             data = data.Sheet1.elements;
+            self.raw_data = [];
             for (var i = 0; i < data.length; i++) {
+              if (i > 15) {
+                continue;
+              }
               data[i].name = data[i].makemodel;
               data[i].value = parseFloat(data[i].comb08u, 10);
             }
@@ -93,7 +97,7 @@ var Bracket = (function() {
           self.element.html(out);
           self.element.find('.bracket_item').css('visibility', 'hidden');
           self.element.find('.bracket_0 .bracket_item').css('visibility', 'visible');
-          self.element.find('.bracket_10 .bracket_item').css('visibility', 'visible');
+          self.element.find('.bracket_6 .bracket_item').css('visibility', 'visible');
           self.bind();
         });
       },
@@ -117,18 +121,12 @@ var Bracket = (function() {
         var first_round = sorting_loop(this.raw_data);
         var second_round = sorting_loop(first_round.next);
         var third_round = sorting_loop(second_round.next);
-        var fourth_round = sorting_loop(third_round.next);
-        var fifth_round = sorting_loop(fourth_round.next);
-        var final_round = sorting_loop(fifth_round.next);
+        var final_round = sorting_loop(third_round.next);
 
         this.data.push({data: first_round.left});
         this.data.push({data: second_round.left});
         this.data.push({data: third_round.left});
-        this.data.push({data: fourth_round.left});
-        this.data.push({data: fifth_round.left});
         this.data.push({data: final_round.left});
-        this.data.push({data: fifth_round.right});
-        this.data.push({data: fourth_round.right});
         this.data.push({data: third_round.right});
         this.data.push({data: second_round.right});
         this.data.push({data: first_round.right});
