@@ -43,7 +43,7 @@ body { margin:0; padding:0;}
 }
 
 button.reset, button.see_table, button.hide_table {
-  background-color: rgb(240,86,71);
+  background-color: #13BDCE;
   color: white;
   font-family: 'Gill Sans';
   font-weight: bold;
@@ -57,7 +57,7 @@ button.reset:hover, button.see_table:hover, button.hide_table:hover {
   color: #CCC;
 }
 button.reset:active, button.see_table:active, button.hide_table:active {
-  background-color: rgb(220,66,51);
+  background-color: #109EAC;
 }
 
 .complete {
@@ -66,9 +66,9 @@ button.reset:active, button.see_table:active, button.hide_table:active {
   padding: 5px 20px 20px 20px;
   top: 278px;
   left: 330px;
-  background-color: rgb(240,86,71);
+  background-color: #13BDCE;
   border-radius: 5px;
-  border: 1px solid rgb(220,66,51);
+  border: 1px solid #109EAC;
   font-family: 'Gill Sans';
 }
 .bracket_0 {
