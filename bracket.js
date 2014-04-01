@@ -156,7 +156,7 @@ var Bracket = (function() {
 
           var bracket;
           var this_bracket = parseFloat(clicked.attr('data-bracket'), 10);
-          var final_bracket = parseFloat(self.data.length, 10) / 2
+          var final_bracket = Math.floor(parseFloat(self.data.length, 10) / 2);
           if (this_bracket > final_bracket) { //is on the right
             bracket = this_bracket - 1; //move toward center
           } else if (this_bracket < final_bracket) { //is on the left
