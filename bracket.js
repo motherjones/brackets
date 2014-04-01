@@ -31,15 +31,6 @@ var Bracket = (function() {
   ';
   var complete_template = '<div class="complete">\
       <h4>You got {correct} answers correct!</h4>\
-      <h5>See how your friends do on \
-      <a rel="nofollow" target="_blank" class=" sd-button share-icon" \
-        href="http://twitter.com/home?status={location} {text|u}" \
-        title="Click to share on Twitter"><span>Twitter</span></a>\
-        or \
-      <a rel="nofollow" target="_blank" class="sd-button share-icon"\
-        href="https://www.facebook.com/dialog/feed?app_id=1132888650146012&display=popup&caption={text|u}&link={location}&redirect_uri={location}"\
-        title="Share on Facebook"><span>Facebook</span></a>\
-      </h5>\
       <button type="button" class="see_table">See The Stats</button>\
       <button type="button" class="reset">Try Again</button>\
     </div>\
