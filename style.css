@@ -59,3 +59,37 @@
   background-color: rgb(240,86,71);
   border-radius: 5px;
 }
+.bracket_0 {
+  left: 20px;
+  top: 40px;
+}
+
+.bracket_1 {
+  left: 150px;
+  top: 70px;
+}
+
+.bracket_2 {
+  left: 270px;
+  top: 170px;
+}
+
+.bracket_3 {
+  left: 415px;
+  top: 245px;
+}
+
+.bracket_4 {
+  left: 575px;
+  top: 170px;
+}
+
+.bracket_5 {
+  left: 695px;
+  top: 70px;
+}
+
+.bracket_6 {
+  top: 40px;
+  left: 800px;
+}
