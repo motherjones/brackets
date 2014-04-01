@@ -27,6 +27,7 @@ var Bracket = (function() {
     <img src="table.png" />\
     <button type="button" class="hide_table">Back to the Bracket</button>\
   </div>\
+  <div class="mobile">This just didn\'t look good small. Sorry. Please wait till you\'re at a desktop.</div>\
   ';
   var complete_template = '<div class="complete">\
       <h4>You got {correct} answers correct!</h4>\
@@ -100,7 +101,7 @@ var Bracket = (function() {
         this.answered = 0;
         dust.render('bracket', this, function(err, out) {
           self.element.html(out);
-//          self.element.find('.bracket_item').hide();
+          self.element.find('.bracket_item').hide();
           self.element.find('.bracket_0 .bracket_item').show();
           self.element.find('.bracket_6 .bracket_item').show();
           self.bind();

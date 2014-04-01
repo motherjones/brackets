@@ -47,22 +47,24 @@
 
 button.reset, button.see_table, button.hide_table {
   background-color: rgb(240,86,71);
+  color: white;
   font-family: 'Gill Sans';
   font-weight: bold;
   font-size: 14px;
   float: right;
-  border: 1px solid rgb(220,66,51);
+  border: 1px solid white;
   padding: 5px;
   border-radius: 2px;
 }
-button.reset:hover {
-  color: #EEE;
+button.reset:hover, button.see_table:hover, button.hide_table:hover {
+  color: #CCC;
 }
-button.reset:active {
+button.reset:active, button.see_table:active, button.hide_table:active {
   background-color: rgb(220,66,51);
 }
 
 .complete {
+  color: white;
   position: absolute;
   padding: 5px 20px 20px 20px;
   top: 278px;
@@ -70,9 +72,10 @@ button.reset:active {
   background-color: rgb(240,86,71);
   border-radius: 5px;
   border: 1px solid rgb(220,66,51);
+  font-family: 'Gill Sans';
 }
 .bracket_0 {
-  left: 20px;
+  left: 30px;
   top: 68px;
 }
 
@@ -81,11 +84,11 @@ button.reset:active {
   top: 107px;
 }
 .bracket_1 .bracket_pairing li, .bracket_5 .bracket_pairing li {
-  margin-bottom: 137px;
+  margin-bottom: 158px;
 }
 
 .bracket_2 {
-  left: 270px;
+  left: 275px;
   top: 183px;
 }
 
@@ -94,7 +97,7 @@ button.reset:active {
 }
 
 .bracket_3 {
-  left: 415px;
+  left: 430px;
   top: 255px;
 }
 .bracket_3 .bracket_pairing li {
@@ -102,18 +105,29 @@ button.reset:active {
 }
 
 .bracket_4 {
-  left: 575px;
+  left: 588px;
   top: 183px;
 }
 
 .bracket_5 {
-  left: 695px;
+  left: 700px;
   top: 107px;
 }
 
 .bracket_6 {
   top: 68px;
-  left: 800px;
+  left: 820px;
 
 }
 
+.mobile {
+  display:none;
+}
+@media all and (max-width: 400px) {
+  .bracket_container, .table_img, .reset {
+    display:none;
+  }
+  .mobile {
+    display:block;
+  }
+}
