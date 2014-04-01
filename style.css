@@ -39,6 +39,12 @@
   height: 15px;
   overflow: hidden;
   padding-left: 3px;
+  background: white;
+  padding: 5px;
+}
+
+.bracket_container .bracket_pairing li:hover {
+  background:#eeeeee;
 }
 
 
