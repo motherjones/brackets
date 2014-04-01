@@ -77,7 +77,7 @@ button.reset:active, button.see_table:active, button.hide_table:active {
 }
 
 .bracket_1 {
-  left: 150px;
+  left: 160px;
   top: 107px;
 }
 .bracket_1 .bracket_pairing li, .bracket_5 .bracket_pairing li {
@@ -85,7 +85,7 @@ button.reset:active, button.see_table:active, button.hide_table:active {
 }
 
 .bracket_2 {
-  left: 275px;
+  left: 290px;
   top: 183px;
 }
 
@@ -102,7 +102,7 @@ button.reset:active, button.see_table:active, button.hide_table:active {
 }
 
 .bracket_4 {
-  left: 588px;
+  left: 570px;
   top: 183px;
 }
 
