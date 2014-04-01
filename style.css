@@ -45,7 +45,7 @@
   background:#eeeeee;
 }
 
-button.reset {
+button.reset, button.see_table, button.hide_table {
   background-color: rgb(240,86,71);
   font-family: 'Gill Sans';
   font-weight: bold;
