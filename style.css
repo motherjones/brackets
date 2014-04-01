@@ -23,11 +23,11 @@
 }
 
 .right {
-  color: green;
+  color: #88C425;
 }
 
 .wrong {
-  color: red;
+  color: #FA2A00;
 }
 
 .bracket_container ul {
