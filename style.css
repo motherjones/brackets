@@ -66,26 +66,36 @@
   left: 150px;
   top: 107px;
 }
+.bracket_1 .bracket_pairing li, .bracket_5 .bracket_pairing li {
+  margin-bottom: 138px;
+}
 
 .bracket_2 {
   left: 270px;
-  top: 170px;
+  top: 183px;
+}
+
+.bracket_2 .bracket_pairing li, .bracket_4 .bracket_pairing li {
+  margin-bottom: 295px;
 }
 
 .bracket_3 {
   left: 415px;
-  top: 245px;
+  top: 255px;
+}
+.bracket_3 .bracket_pairing li {
+  margin-bottom: 154px;
 }
 
 .bracket_4 {
   left: 575px;
-  top: 170px;
+  top: 183px;
 }
 
 .bracket_5 {
   left: 695px;
   text-align: right;
-  top: 70px;
+  top: 107px;
 }
 
 .bracket_6 {
