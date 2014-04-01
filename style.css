@@ -11,6 +11,7 @@
   background-repeat: no-repeat;
   position: relative;
   line-height: 1em;
+  text-align: center;
 }
 .bracket_section {
   position: absolute;
@@ -79,18 +80,16 @@
 .bracket_4 {
   left: 575px;
   top: 170px;
-  text-align: right;
 }
 
 .bracket_5 {
   left: 695px;
   top: 70px;
-    text-align: right;
 }
 
 .bracket_6 {
   top: 40px;
   left: 800px;
-  text-align: right;
+
 }
 
