@@ -6,7 +6,7 @@
   font-weight: bold;
   text-variant: small-caps;
   font-size: 10px;
-  background-image: url('betterbracket.png');
+  background-image: url('bg.png');
   background-size: contain;
   background-repeat: no-repeat;
   position: relative;
@@ -48,87 +48,6 @@
   background:#eeeeee;
 }
 
-.bracket_0, .bracket_10 {
-  margin-top: 60px;
-}
-.bracket_0 .bracket_pairing, .bracket_10 .bracket_pairing {
-  margin-top: -8px;
-}
-.bracket_0 .bracket_pairing.pairing_8, .bracket_10 .bracket_pairing.pairing_8 {
-  padding-top: 15px;
-}
-
-.bracket_1, .bracket_9 {
-  padding-top: 68px;
-}
-.bracket_1 .bracket_pairing li, .bracket_9 .bracket_pairing li {
-  margin-bottom: 53px;
-}
-.bracket_1 .bracket_pairing, .bracket_9 .bracket_pairing {
-  padding-bottom: 2px;
-}
-.bracket_1 .bracket_pairing.pairing_4, .bracket_9 .bracket_pairing.pairing_4 {
-  padding-top: 15px;
-}
-.bracket_9, .bracket_10 {
-  margin-left: 10px;
-}
-
-.bracket_2, .bracket_8 {
-  padding-left: 9px; 
-  padding-top: 100px;
-}
-.bracket_2 .bracket_pairing li, .bracket_8 .bracket_pairing li {
-  margin-bottom: 120px;
-}
-.bracket_2 .bracket_pairing, .bracket_8 .bracket_pairing {
-  margin-top: -2px;
-}
-.bracket_2 .bracket_pairing.pairing_2, .bracket_8 .bracket_pairing.pairing_2 {
-  padding-top: 12px;
-}
-
-.bracket_3 {
-  margin-left: 13px;
-  padding-top: 165px;
-}
-.bracket_7 {
-  padding-top: 165px;
-}
-.bracket_3 .bracket_pairing, .bracket_7 .bracket_pairing {
-  padding-bottom: 6px;
-}
-.bracket_3 .bracket_pairing li, .bracket_7 .bracket_pairing li {
-  margin-bottom: 250px;
-}
-
-.bracket_4 {
-  margin-top: 225px;
-  margin-left: 8px;
-  width: 104px;
-}
-.bracket_4 .bracket_pairing li {
-  margin-bottom: 516px;
-}
-.bracket_6 {
-  margin-top: 368px;
-  margin-left: -30px;
-  width: 100px;
-}
-.bracket_6 .bracket_pairing li {
-  margin-bottom: 516px;
-}
-.bracket_5 {
-  position: relative
-}
-.bracket_5 .bracket_pairing{
-  position: absolute;
-  top: 457px;
-  left: -50px;
-}
-.bracket_5 .bracket_pairing li {
-  margin-bottom: 191px;
-}
 
 .complete button{
   float: right;
