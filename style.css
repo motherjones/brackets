@@ -13,7 +13,7 @@
   line-height: 1em;
 }
 .bracket_section {
-  float: left;  
+  position: absolute;
   width: 137px;
   padding:0;
   margin:0;
