@@ -1,11 +1,11 @@
 .bracket_container {
   overflow:hidden;
   width: 960px;
-  height: 1080px;
+  height: 640px;
   font-family: 'Gill Sans';
   font-weight: bold;
   text-variant: small-caps;
-  font-size: 10px;
+  font-size: 15px;
   background-image: url('bg.png');
   background-size: contain;
   background-repeat: no-repeat;
@@ -14,7 +14,7 @@
 }
 .bracket_section {
   float: left;  
-  width: 9%;
+  width: 137px;
   padding:0;
   margin:0;
 }
@@ -36,9 +36,8 @@
 }
 
 .bracket_container .bracket_pairing li {
-  height: 10px;
+  height: 15px;
   overflow: hidden;
-  margin-bottom: 26px;
   padding-left: 3px;
 }
 
