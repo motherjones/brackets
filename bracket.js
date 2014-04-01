@@ -92,9 +92,9 @@ var Bracket = (function() {
         this.answered = 0;
         dust.render('bracket', this, function(err, out) {
           self.element.html(out);
-          self.element.find('.bracket_item').hide();
-          self.element.find('.bracket_0 .bracket_item').show();
-          self.element.find('.bracket_6 .bracket_item').show();
+          self.element.find('.bracket_item').css('visibility', 'hidden');
+          self.element.find('.bracket_0 .bracket_item').css('visibility', 'visible');
+          self.element.find('.bracket_6 .bracket_item').css('visibility', 'visible');
           self.bind();
         });
       },
@@ -163,7 +163,7 @@ var Bracket = (function() {
               ' .pairing_' + pairing + ' li'
             ).each(function() {
               if (parseFloat($(this).attr('data-value'), 10) === correct_val) {
-                $(this).show();
+                $(this).css('visibility', 'visible');
               }
             })
 

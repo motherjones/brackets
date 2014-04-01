@@ -1,3 +1,4 @@
+body { margin:0; padding:0;}
 .bracket_container {
   overflow:hidden;
   width: 960px;
@@ -39,10 +40,6 @@
 	overflow: hidden;
 	font-size: 12px;
 	margin-bottom: 60px;
-}
-
-.bracket_container .bracket_pairing li:hover {
-  background:#eeeeee;
 }
 
 button.reset, button.see_table, button.hide_table {
