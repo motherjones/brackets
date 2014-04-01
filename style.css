@@ -37,10 +37,8 @@
 
 .bracket_container .bracket_pairing li {
 	overflow: hidden;
-	background: white;
-	margin-bottom: 50px;
 	font-size: 12px;
-	padding: 5px;
+	margin-bottom: 50px;
 }
 
 .bracket_container .bracket_pairing li:hover {
