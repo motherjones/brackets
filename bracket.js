@@ -120,6 +120,13 @@ var Bracket = (function() {
         var third_round = sorting_loop(second_round.next);
         var final_round = sorting_loop(third_round.next);
 
+        final_round.right = final_round.left;
+        // swap order of final round to match our brackets
+        final_round.left[0] = { 
+          first: final_round.right[0].second,
+          second: final_round.right[0].first
+        };
+
         this.data.push({data: first_round.left});
         this.data.push({data: second_round.left});
         this.data.push({data: third_round.left});
@@ -127,7 +134,6 @@ var Bracket = (function() {
         this.data.push({data: third_round.right});
         this.data.push({data: second_round.right});
         this.data.push({data: first_round.right});
-        console.log(this.data);
       },
       bind: function() {
         var self = this;
