@@ -23,6 +23,10 @@ var Bracket = (function() {
     {/data}\
   </div>\
   <button type="button" class="reset">Try Again</button>\
+  <div class="table_img" style="display:none;">\
+    <img src="table.png" />\
+    <button type="button" class="hide_table">Back to the Bracket</button>\
+  </div>\
   ';
   var complete_template = '<div class="complete">\
       <h4>You got {correct} answers correct!</h4>\
@@ -35,6 +39,7 @@ var Bracket = (function() {
         href="https://www.facebook.com/dialog/feed?app_id=1132888650146012&display=popup&caption={text|u}&link={location}&redirect_uri={location}"\
         title="Share on Facebook"><span>Facebook</span></a>\
       </h5>\
+      <button type="button" class="see_table">See The Stats</button>\
       <button type="button" class="reset">Try Again</button>\
     </div>\
   ';
@@ -189,6 +194,18 @@ var Bracket = (function() {
             self.element.append($(out));
             self.element.find('.reset').click(function() {
               self.reset();
+            });
+            self.element.find('.see_table').click(function() {
+              self.element.find('.bracket_container').hide();
+              self.element.find('.complete').hide();
+              self.element.find('.reset').hide();
+              self.element.find('.table_img').show();
+            });
+            self.element.find('.hide_table').click(function() {
+              self.element.find('.bracket_container').show();
+              self.element.find('.complete').show();
+              self.element.find('.reset').show();
+              self.element.find('.table_img').hide();
             });
           }
         );
