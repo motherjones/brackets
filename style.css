@@ -62,16 +62,14 @@ button.reset:active {
   background-color: rgb(220,66,51);
 }
 
-.complete button {
-  float: right;
-}
 .complete {
   position: absolute;
   padding: 5px 20px 20px 20px;
-  left: 320px;
-  top: 495px;
+  top: 278px;
+  left: 330px;
   background-color: rgb(240,86,71);
   border-radius: 5px;
+  border: 1px solid rgb(220,66,51);
 }
 .bracket_0 {
   left: 20px;
