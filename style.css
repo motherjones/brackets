@@ -40,6 +40,12 @@
   overflow: hidden;
   margin-bottom: 26px;
   padding-left: 3px;
+  background: white;
+  padding: 5px;
+}
+
+.bracket_container .bracket_pairing li:hover {
+  background:#eeeeee;
 }
 
 .bracket_0, .bracket_10 {
