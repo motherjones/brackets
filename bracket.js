@@ -173,10 +173,10 @@ var Bracket = (function() {
               }
             })
 
-            self.answered++;
-            if (self.answered + 1 === self.raw_data.length) { //all questions answered
-              self.finished();
-            }
+          }
+          self.answered++;
+          if (self.answered + 1 === self.raw_data.length) { //all questions answered
+            self.finished();
           }
         });
       },
