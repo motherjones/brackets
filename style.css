@@ -42,7 +42,6 @@
 	padding: 5px;
 	margin-bottom: 50px;
 	font-size: 12px;
-	height: 40px;
 }
 
 .bracket_container .bracket_pairing li:hover {
@@ -84,14 +83,18 @@
 .bracket_4 {
   left: 575px;
   top: 170px;
+  text-align: right;
 }
 
 .bracket_5 {
   left: 695px;
   top: 70px;
+    text-align: right;
 }
 
 .bracket_6 {
   top: 40px;
   left: 800px;
+  text-align: right;
 }
+
