@@ -45,8 +45,16 @@
   background:#eeeeee;
 }
 
+button.reset {
+  background-color: rgb(240,86,71);
+  font-family: 'Gill Sans';
+  font-weight: bold;
+  font-size: 14px;
+  float: right;
+  border-radius: 2px;
+}
 
-.complete button{
+.complete button {
   float: right;
 }
 .complete {
