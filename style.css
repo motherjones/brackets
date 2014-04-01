@@ -36,11 +36,13 @@
 }
 
 .bracket_container .bracket_pairing li {
-  height: 15px;
-  overflow: hidden;
-  padding-left: 3px;
-  background: white;
-  padding: 5px;
+	height: 15px;
+	overflow: hidden;
+	padding-left: 3px;
+	background: white;
+	padding: 5px;
+	margin-bottom: 50px;
+	font-size: 10px;
 }
 
 .bracket_container .bracket_pairing li:hover {
