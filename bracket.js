@@ -46,6 +46,7 @@ var Bracket = (function() {
   var Constructor = function(spreadsheet_id, selector, proxy) {
     var bracket = new Bracket;
     bracket.spreadsheet_id = spreadsheet_id;
+    bracket.proxy = proxy;
     bracket.element = jQuery(selector);
     bracket.load();
     return bracket;
@@ -75,6 +76,7 @@ var Bracket = (function() {
         if (this.proxy) {
           options.proxy = this.proxy;
         }
+        console.log(options.proxy);
         Tabletop.init(options); 
 
       },
