@@ -76,7 +76,6 @@ var Bracket = (function() {
         if (this.proxy) {
           options.proxy = this.proxy;
         }
-        console.log(options.proxy);
         Tabletop.init(options); 
 
       },
@@ -95,9 +94,13 @@ var Bracket = (function() {
         dust.render('bracket', this, function(err, out) {
           self.element.html(out);
           self.element.find('.bracket_item').css('visibility', 'hidden');
-          self.element.find('.bracket_0 .bracket_item').css('visibility', 'visible');
-          self.element.find('.bracket_6 .bracket_item').css('visibility', 'visible');
-          self.bind();
+          self.element.find('.bracket_0 .bracket_item').css('visibility', 'visible')
+            .each(function(){ self.bind($(this)) });
+          self.element.find('.bracket_6 .bracket_item').css('visibility', 'visible')
+            .each(function(){ self.bind($(this)) });
+          self.element.find('.reset').click(function() {
+            self.reset();
+          });
         });
       },
       randomize_data_order: function() {
@@ -137,12 +140,9 @@ var Bracket = (function() {
         this.data.push({data: second_round.right});
         this.data.push({data: first_round.right});
       },
-      bind: function() {
+      bind: function(element) {
         var self = this;
-        this.element.find('.reset').click(function() {
-          self.reset();
-        });
-        this.element.find('.bracket_item').click(function(event) {
+        element.click(function(event) {
           var is_right = true;
           var clicked = $(event.target);
           var correct_val = parseFloat(clicked.attr('data-value'), 10);
@@ -166,14 +166,25 @@ var Bracket = (function() {
           }
 
           if (bracket) {
+            var is_both_visible = true;
             var pairing = Math.floor(clicked.attr('data-pairing') / 2);
             self.element.find('.bracket_' + bracket + 
               ' .pairing_' + pairing + ' li'
             ).each(function() {
               if (parseFloat($(this).attr('data-value'), 10) === correct_val) {
                 $(this).css('visibility', 'visible');
+              } else if ($(this).css('visibility') === 'hidden') { //is not the one just made visible and is not visible
+                is_both_visible = false;
               }
             })
+            
+            if (is_both_visible) {
+              self.element.find('.bracket_' + bracket + 
+                ' .pairing_' + pairing + ' li'
+              ).each(function() {
+                self.bind($(this));
+              });
+            }
 
           }
           self.answered++;
