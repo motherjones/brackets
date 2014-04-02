@@ -38,12 +38,13 @@ body { margin:0; padding:0;}
 
 .bracket_container .bracket_pairing li {
 	overflow: hidden;
+  cursor: pointer;
 	font-size: 12px;
 	margin-bottom: 60px;
 }
 
 button.reset, button.see_table, button.hide_table {
-  background-color: #13BDCE;
+  background-color: #F7312E;
   color: white;
   font-family: 'Gill Sans';
   font-weight: bold;
@@ -57,7 +58,7 @@ button.reset:hover, button.see_table:hover, button.hide_table:hover {
   color: #CCC;
 }
 button.reset:active, button.see_table:active, button.hide_table:active {
-  background-color: #109EAC;
+  background-color: #D42A2B;
 }
 
 .complete {
@@ -66,9 +67,9 @@ button.reset:active, button.see_table:active, button.hide_table:active {
   padding: 5px 20px 20px 20px;
   top: 278px;
   left: 330px;
-  background-color: #13BDCE;
+  background-color: #F7312E;
   border-radius: 5px;
-  border: 1px solid #109EAC;
+  border: 1px solid #D42A2B;
   font-family: 'Gill Sans';
 }
 .bracket_0 {
