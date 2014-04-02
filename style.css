@@ -120,7 +120,7 @@ button.reset:active, button.see_table:active, button.hide_table:active {
 .mobile {
   display:none;
 }
-@media all and (max-width: 400px) {
+@media all and (max-device-width: 400px) {
   .bracket_container, .table_img, .reset {
     display:none;
   }
