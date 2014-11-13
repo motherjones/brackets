@@ -24,7 +24,7 @@ var Bracket = (function() {
   </div>\
   <button type="button" class="reset">Try Again</button>\
   <div class="table_img" style="display:none;">\
-    <img src="table.png" />\
+    <img src="img/table.png" />\
     <button type="button" class="hide_table">Back to the Bracket</button>\
   </div>\
   <div class="mobile">This just didn\'t look good small. Sorry! Please give at shot when you\'re at a desktop.</div>\
