@@ -1,11 +1,10 @@
-body { margin:0; padding:0;}
+
+
 .bracket_container {
   overflow:hidden;
-  width: 960px;
+  width: 100%;
   height: 640px;
-  font-family: 'Gill Sans';
   font-weight: bold;
-  text-variant: small-caps;
   background-image: url('../img/bg.png');
   background-size: contain;
   background-repeat: no-repeat;
@@ -39,39 +38,19 @@ body { margin:0; padding:0;}
 .bracket_container .bracket_pairing li {
 	overflow: hidden;
   cursor: pointer;
-	font-size: 12px;
 	margin-bottom: 60px;
 }
 
-button.reset, button.see_table, button.hide_table {
-  background-color: #F7312E;
+.complete {
+  padding: 1em;
+  background-color: black;
+  border-radius: 5px;
+  border: 1px solid #eee;
+  width: 30%;
+  text-align: center;
   color: white;
-  font-family: 'Gill Sans';
-  font-weight: bold;
-  font-size: 14px;
-  float: right;
-  border: 1px solid white;
-  padding: 5px;
-  border-radius: 2px;
-}
-button.reset:hover, button.see_table:hover, button.hide_table:hover {
-  color: #CCC;
-}
-button.reset:active, button.see_table:active, button.hide_table:active {
-  background-color: #D42A2B;
 }
 
-.complete {
-  color: white;
-  position: absolute;
-  padding: 5px 20px 20px 20px;
-  top: 278px;
-  left: 330px;
-  background-color: #F7312E;
-  border-radius: 5px;
-  border: 1px solid #D42A2B;
-  font-family: 'Gill Sans';
-}
 .bracket_0 {
   left: 30px;
   top: 68px;

@@ -1,19 +1,23 @@
 <html>
   <head>
+    
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/style.css" rel="stylesheet" />
   </head>
   <body>
     
-    <div id="brackets">
+    <div class="container-fluid">
+      <div id="bracket">
+      </div>
     </div>
 
     <script src="js/dust-full-1.2.3.min.js"></script>
     <script src="js/jquery.min.js"></script>
     <script src="js/tabletop.js"></script>
-    <script src="js/bracket.js"></script>
+    <script src="js/script.js"></script>
 
     <script>
-      var thing = Bracket('0Apogs1tjp7w0dHZxRmhqY2RXN29VOUxUaHdZTW5hcWc', '#brackets', 'https://s3.amazonaws.com/mj-tabletop-proxy');
+      var bracket = Bracket('0Apogs1tjp7w0dHZxRmhqY2RXN29VOUxUaHdZTW5hcWc', '#bracket', 'https://s3.amazonaws.com/mj-tabletop-proxy');
     </script>
   
   </body>

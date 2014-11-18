@@ -22,17 +22,17 @@ var Bracket = (function() {
       </ul>\
     {/data}\
   </div>\
-  <button type="button" class="reset">Try Again</button>\
+  <button type="button" class="reset btn btn-primary">Try Again</button>\
   <div class="table_img" style="display:none;">\
     <img src="img/table.png" />\
     <button type="button" class="hide_table">Back to the Bracket</button>\
   </div>\
   <div class="mobile">This just didn\'t look good small. Sorry! Please give at shot when you\'re at a desktop.</div>\
   ';
-  var complete_template = '<div class="complete">\
+  var complete_template = '<div class="complete center-block text-center">\
       <h4>You got {correct} answers correct!</h4>\
-      <button type="button" class="see_table">See The Stats</button>\
-      <button type="button" class="reset">Try Again</button>\
+      <button type="button" class="see_table btn btn-primary">See The Stats</button>\
+      <button type="button" class="reset btn btn-primary">Try Again</button>\
     </div>\
   ';
   var compiled_pairing = dust.compile(pairing_template, 'bracket_pairing');
