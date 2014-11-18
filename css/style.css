@@ -2,7 +2,7 @@
 
 .bracket_container {
   overflow:hidden;
-  width: 100%;
+  width: 960px;
   height: 640px;
   font-weight: bold;
   background-image: url('../img/bg.png');
