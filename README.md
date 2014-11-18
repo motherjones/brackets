@@ -13,10 +13,7 @@ Sample screenshot.
 
 Your "players" go in the ``player`` column. The metric you're scoring them against goes in the ``score`` column.
 
-The bracket doesn't show on mobile. Instead, we show a table of all of the players and their scores.
-
-
-Update the .html, .js, and .css files with your new categories and statuses, and seen in the [Modify](#modify-these-for-your-project) section.
+The bracket doesn't show on mobile. Instead, we show a table of all of the players and their scores; this is a simple static graphic.
 
 *MoJo staffers:* get started by following [these instructions](https://github.com/motherjones/story-tools#starting-a-new-project). When you're done, upload to s3 and embed in the shell [(how to)](https://github.com/motherjones/story-tools#starting-a-new-project).
 
@@ -27,30 +24,19 @@ Update the .html, .js, and .css files with your new categories and statuses, and
 *MoJo staffers:* Make a copy and move to the relevant beat folder. Change owner to MoJo Data in ``Share > Advanced``
 
 ##Modify these for your project
-**In index.html:**
-
-            <li class="key-item key-0"><b></b><span>Restrictions passed</span></li>
-            <li class="key-item key-1"><b></b><span>New restrictions passed but challenged in court</span></li>
-            <li class="key-item key-2"><b></b><span>No change</span></li>
-
-and every instance of:
-
-        <th><h6>Specific information or criteria required of minors</h6>
-        ...
-        <svg id="provide_map" ...
-
 
 **In script.js:**
 
-        //make cells and map for each category
-        $tr.append(makeCell(row, 'providestatus', 'providedetails', 'provide_map'));
-        $tr.append(makeCell(row, 'evidencestatus', 'evidencedetails', 'evidence_map'));
-        $tr.append(makeCell(row, 'judgesstatus', 'judgesdetails', 'judges_map'));
-        $tr.append(makeCell(row, 'fewerstatus', 'fewerdetails', 'fewer_map'));
-        $tr.append(makeCell(row, 'lawyersstatus', 'lawyersdetails', 'lawyers_map'));
+The code stays the same, but you'll need to upload a new table graphic.
+
+    <div class="table_img" style="display:none;">\
+    <img src="img/table.png" />\
 
 **In style.css**:
 
-Everywhere a status is mentioned, eg.:
+Here as well, the code stays the same, but you'll want to upload a new background image.
 
-    .key-0 b, .yes, svg .yes path, .yes, svg path.yes ...
+    .bracket_container {
+      ...
+      background-image: url('../img/bg.png');
+    }
