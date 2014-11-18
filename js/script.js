@@ -59,14 +59,14 @@ var Bracket = (function() {
         var options = {
           key: this.spreadsheet_id,
           callback: function(data) {
-            data = data.Sheet1.elements;
+            data = data.master.elements;
             self.raw_data = [];
             for (var i = 0; i < data.length; i++) {
               if (i > 15) {
                 break;
               }
-              data[i].name = data[i].makemodel;
-              data[i].value = parseFloat(data[i].comb08u, 10);
+              data[i].name = data[i].player;
+              data[i].value = parseFloat(data[i].score, 10);
               self.raw_data.push(data[i]);
             }
 
