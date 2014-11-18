@@ -2,18 +2,19 @@
 
 Sample screenshot. 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/motherjones/map-table/master/img/screenshot.png" alt="screenshot"/>
+  <img src="https://raw.githubusercontent.com/motherjones/brackets/master/img/screenshot.png" alt="screenshot"/>
 </p>
 
 ##Examples in the wild
 
-[Demo](http://www.motherjones.com/environment/2014/04/auto-bracket-miles-per-gallon)  
+[Which of These 16 Cars Wins the Fuel-Efficiency Smackdown?](http://www.motherjones.com/environment/2014/04/auto-bracket-miles-per-gallon)  
 
 ##How it works
 
-Each state has a pair of ``_status`` and ``_details`` columns along one or more categories. Change the first word in each of these columns to match the data in your story. Add or delete pairs of columns as needed. Two to four categories tend to work well.
+Your "players" go in the ``player`` column. The metric you're scoring them against goes in the ``score`` column.
 
-The ``_details`` column contains display copy. These cells can contain regular blurbs, [special characters](http://dev.w3.org/html5/html-author/charref), or be blank. You can use ``<em></em>``, ``<strong></strong>``, ``<a></a>``, and other html tags in these cells for italics, bold, links, and more.
+The bracket doesn't show on mobile. Instead, we show a table of all of the players and their scores.
+
 
 Update the .html, .js, and .css files with your new categories and statuses, and seen in the [Modify](#modify-these-for-your-project) section.
 
